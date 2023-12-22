@@ -6,7 +6,7 @@ describe('Tournament', () => {
     const expected = 'Team                           | MP |  W |  D |  L |  P';
     expect(tally).toEqual(expected);
   });
-  xtest('a win is three points, a loss is zero points', () => {
+  test('a win is three points, a loss is zero points', () => {
     const tally = tournamentTally('Allegoric Alaskans;Blithering Badgers;win');
     const expected =
       'Team                           | MP |  W |  D |  L |  P\n' +
@@ -14,7 +14,7 @@ describe('Tournament', () => {
       'Blithering Badgers             |  1 |  0 |  0 |  1 |  0';
     expect(tally).toEqual(expected);
   });
-  xtest('a win can also be expressed as a loss', () => {
+  test('a win can also be expressed as a loss', () => {
     const tally = tournamentTally('Blithering Badgers;Allegoric Alaskans;loss');
     const expected =
       'Team                           | MP |  W |  D |  L |  P\n' +
@@ -22,7 +22,7 @@ describe('Tournament', () => {
       'Blithering Badgers             |  1 |  0 |  0 |  1 |  0';
     expect(tally).toEqual(expected);
   });
-  xtest('a different team can win', () => {
+  test('a different team can win', () => {
     const tally = tournamentTally('Blithering Badgers;Allegoric Alaskans;win');
     const expected =
       'Team                           | MP |  W |  D |  L |  P\n' +
@@ -30,7 +30,7 @@ describe('Tournament', () => {
       'Allegoric Alaskans             |  1 |  0 |  0 |  1 |  0';
     expect(tally).toEqual(expected);
   });
-  xtest('a draw is one point each', () => {
+  test('a draw is one point each', () => {
     const tally = tournamentTally('Allegoric Alaskans;Blithering Badgers;draw');
     const expected =
       'Team                           | MP |  W |  D |  L |  P\n' +
